@@ -1,0 +1,237 @@
+/* Font and global styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.page {
+    display: none;
+    padding: 50px;
+}
+
+.page.active {
+    display: block;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.center-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.brand span {
+    color: #007AFF;
+}
+
+.login-form input, .login-form select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus, .login-form select:focus {
+    border-color: #007AFF;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #007AFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #005BB5;
+}
+
+/* Student Dashboard styling */
+.actions {
+    text-align: center;
+}
+
+.button {
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+.leaderboard {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard h3 {
+    font-size: 1.8em;
+    color: #007AFF;
+    margin-bottom: 20px;
+}
+
+.leaderboard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Professor Dashboard styling */
+.ai-scores {
+    margin-top: 30px;
+}
+
+#aiScoreChart, #leaderboardChart {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Global styling remains the same */
+body, input, select, textarea, button {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Timetable Styling */
+.timetable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.timetable td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.timetable td.subject:hover {
+    background-color: #007AFF;
+    color: white;
+}
+
+.active-deadlines {
+    margin-top: 30px;
+}
+
+#deadlinesList li {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+textarea, select, input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+/* Calendar Table Styling */
+#calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#calendar th, #calendar td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#calendar th {
+    background-color: #007AFF;
+    color: white;
+}
+
+/* Additional styles for the new elements */
+h2, h3 {
+    margin: 20px 0;
+}
+
+.timetable {
+    margin: 20px 0;
+}
+
+#aiScoreChart {
+    height: 400px;
+    margin: 20px 0;
+}
+
+#calendar th, #calendar td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}

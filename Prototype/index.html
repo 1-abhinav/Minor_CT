@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Classroom</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="app-container">
+    <!-- Login Page -->
+    <div id="login-page" class="page active">
+      <div class="center-box">
+        <h1 class="brand">Focus<span>Classroom</span></h1>
+        <form class="login-form" id="loginForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <select id="role">
+            <option value="student">Student</option>
+            <option value="professor">Professor</option>
+          </select>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Student Dashboard Page -->
+    <div id="student-dashboard-page" class="page">
+      <header>
+        <h2>Student Dashboard</h2>
+        <p id="current-score">Current Score: 0</p>
+        <p id="leaderboard-position">Leaderboard Position: N/A</p>
+      </header>
+      <section class="timetable">
+        <h3>Select Subject from Timetable</h3>
+        <table id="timetable">
+          <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+          </tr>
+          <tr>
+            <td>9:00 - 10:00</td>
+            <td class="subject" data-subject="Data Structures">Data Structures</td>
+            <td class="subject" data-subject="Database Systems">Database Systems</td>
+            <td class="subject" data-subject="Software Engineering">Software Engineering</td>
+            <td class="subject" data-subject="Web Development">Web Development</td>
+            <td class="subject" data-subject="Machine Learning">Machine Learning</td>
+          </tr>
+          <tr>
+            <td>10:00 - 11:00</td>
+            <td class="subject" data-subject="Algorithms">Algorithms</td>
+            <td class="subject" data-subject="Operating Systems">Operating Systems</td>
+            <td class="subject" data-subject="Computer Networks">Computer Networks</td>
+            <td class="subject" data-subject="Mobile App Development">Mobile App Development</td>
+            <td class="subject" data-subject="Artificial Intelligence">Artificial Intelligence</td>
+          </tr>
+          <tr>
+            <td>11:00 - 12:00</td>
+            <td class="subject" data-subject="Machine Learning">Machine Learning</td>
+            <td class="subject" data-subject="Database Systems">Database Systems</td>
+            <td class="subject" data-subject="Software Engineering">Software Engineering</td>
+            <td class="subject" data-subject="Web Development">Web Development</td>
+            <td class="subject" data-subject="Algorithms">Algorithms</td>
+          </tr>
+        </table>
+      </section>
+      <section class="submission">
+        <h3>Submit Notes</h3>
+        <label for="format">Choose Format:</label>
+        <select id="format">
+          <option value="text">Text</option>
+          <option value="file">File (PDF, .txt)</option>
+        </select>
+        <input type="file" id="fileUpload" style="display: none;">
+        <textarea id="notes" placeholder="Type your notes here..." required></textarea>
+        <button id="submit-notes-btn" class="button">Submit Notes</button>
+      </section>
+      <section class="active-deadlines">
+        <h3>Active Deadlines</h3>
+        <ul id="deadlinesList">
+          <li>Subject: Data Structures, Notes: Important concepts - Deadline: 15 minutes after lecture</li>
+          <li>Subject: Algorithms, Notes: Sorting algorithms - Deadline: 30 minutes after lecture</li>
+          <li>Subject: Database Systems, Notes: SQL Queries - Deadline: 1 hour after lecture</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Professor Dashboard Page -->
+    <div id="professor-dashboard-page" class="page">
+      <header>
+        <h2>Professor Dashboard</h2>
+      </header>
+      <section class="actions">
+        <label for="section">Select Section:</label>
+        <select id="section">
+          <option value="A">Section A</option>
+          <option value="B">Section B</option>
+          <option value="C">Section C</option>
+          <option value="D">Section D</option>
+        </select>
+        <label for="lecture-time">Lecture Timing:</label>
+        <select id="lecture-time">
+          <option value="9:00">9:00 - 10:00</option>
+          <option value="10:00">10:00 - 11:00</option>
+          <option value="11:00">11:00 - 12:00</option>
+        </select>
+        <label for="lecture-date">Lecture Date:</label>
+        <input type="date" id="lecture-date" required>
+        <label for="deadline">Set Deadline:</label>
+        <select id="deadline">
+          <option value="5">5 minutes after lecture</option>
+          <option value="15">15 minutes after lecture</option>
+          <option value="30">30 minutes after lecture</option>
+          <option value="45">45 minutes after lecture</option>
+          <option value="60">1 hour after lecture</option>
+        </select>
+        <button id="upload-notes-btn" class="button">Upload Notes</button>
+      </section>
+      <section class="calendar">
+        <h3>Uploaded Lecture Notes</h3>
+        <div id="calendar">
+          <table>
+            <tr>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Section</th>
+            </tr>
+            <tr>
+              <td>2024-10-14</td>
+              <td><a href="#" class="note-link">Data Structures</a></td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>2024-10-15</td>
+              <td><a href="#" class="note-link">Algorithms</a></td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>2024-10-16</td>
+              <td><a href="#" class="note-link">Database Systems</a></td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>2024-10-17</td>
+              <td><a href="#" class="note-link">Operating Systems</a></td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>2024-10-18</td>
+              <td><a href="#" class="note-link">Machine Learning</a></td>
+              <td>B</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section class="ai-scores">
+        <h3>AI-Based Scoring</h3>
+        <label for="section-scores">Select Section:</label>
+        <select id="section-scores">
+          <option value="A">Section A</option>
+          <option value="B">Section B</option>
+          <option value="C">Section C</option>
+          <option value="D">Section D</option>
+        </select>
+        <canvas id="aiScoreChart"></canvas>
+      </section>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
